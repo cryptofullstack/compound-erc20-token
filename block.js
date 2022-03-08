@@ -4,9 +4,9 @@ import { tokens } from "./result.js";
 
 var finalTokens = [];
 
-const tokenBalance = async (token, lastBlockNum) => {
+const fetchTokenBalance = async (token, lastBlockNum) => {
   try {
-    return await axios.get(`https://deep-index.moralis.io/api/v2/${token.wallet_address}/erc20?chain=eth&to_block=${lastBlockNum}`,
+    return await axios.get(`https://deep-index.moralis.io/api/v2/${token.walletAddress}/erc20?chain=eth&to_block=${lastBlockNum}`,
       { headers: { 'X-API-Key': `iOWumgDJl0YeKNzZNBiW7wZQR3CXkK2aCeSu4iWtJdeAIb8piSXoYecaL67Cc21P`, "content-type": "application/json" } })
   } catch (error) {
     console.error(error)
@@ -15,12 +15,39 @@ const tokenBalance = async (token, lastBlockNum) => {
 
 const countToken = async (token) => {
   const lastBlockNum = token.blockNums[token.blockNums.length-1];
-  const tokensRes = await tokenBalance(token, lastBlockNum);
-  const tokens = tokensRes.data;
+  const nextBlockNum = Number(lastBlockNum)+1;
+  let firstBLock = 0;
+  let isFirstBlock = true;
+  let subTokens = [];
+  for (let blockNum = lastBlockNum; blockNum <= nextBlockNum; blockNum++) {
+    const resultTokensRes = await fetchTokenBalance(token, blockNum);
+    const resultTokens = resultTokensRes.data;
 
-  console.log(tokens)
+    const currentToken = resultTokens.filter(resultToken => {
+      return resultToken.token_address == token.tokenAddress;
+    });
 
-  return tokens;
+    if (isFirstBlock) {
+      isFirstBlock = false;
+      firstBLock = currentToken;
+    } else {
+      if (firstBLock.balance < currentToken.balance) {
+        const compound = {
+          "tokenAddress": token.tokenAddress,
+          "testResult": {
+            "walletAddress": token.walletAddress,
+            "blockNumOne": lastBlockNum,
+            "balanceOne": firstBLock.balance,
+            "blockNumTwo": nextBlockNum,
+            "balanceTwo": currentToken.balance,
+          }
+        }
+        subTokens.push(compound);
+      }
+    }
+  }
+
+  return subTokens;
 }
 
 const operate = async () => {

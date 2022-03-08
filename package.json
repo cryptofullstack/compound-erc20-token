@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon ./index.js",
-    "block": "nodemon ./block.js",
+    "dev": "node ./index.js",
+    "block": "node ./block.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Lee",
