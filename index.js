@@ -91,6 +91,11 @@ const operate = async () => {
 
 operate().then(response => {
   const tokenData = JSON.stringify(response);
+  var dir = './assets';
+
+  if(!fs.existsSync(dir)){
+    fs.mkdirSync(dir);
+  }
   
   fs.writeFile("assets/final_result.json", tokenData, function (err) {
     if (err) {
