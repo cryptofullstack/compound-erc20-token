@@ -1,0 +1,65 @@
+[{
+  "token_address": "0x4c334f280f9e440788b66c4e5260c03e4477267a",
+  "name": "Hop.Exchange",
+  "symbol": "HPX",
+  "logo": null,
+  "thumbnail": null,
+  "decimals": "18",
+  "balance": "223773303397977325683083"
+}, {
+  "token_address": "0x22b48e1f20043d1db5f2a11cbf1d520a4f20b198",
+  "name": "Okuru Token",
+  "symbol": "XOT",
+  "logo": null,
+  "thumbnail": null,
+  "decimals": "18",
+  "balance": "50000000000000"
+}, {
+  "token_address": "0x4a057f3f6a393123ec6b72762bbcaea398b528ca",
+  "name": "MayKinFund",
+  "symbol": "love",
+  "logo": null,
+  "thumbnail": null,
+  "decimals": "18",
+  "balance": "1000000000000000000"
+}, {
+  "token_address": "0x34278f6f40079eae344cbac61a764bcf85afc949",
+  "name": "FF9.io",
+  "symbol": "FF9.io",
+  "logo": null,
+  "thumbnail": null,
+  "decimals": "18",
+  "balance": "300000000000000000000000"
+}, {
+  "token_address": "0x82dfdb2ec1aa6003ed4acba663403d7c2127ff67",
+  "name": "akSwap.io",
+  "symbol": "akSwap.io",
+  "logo": null,
+  "thumbnail": null,
+  "decimals": "18",
+  "balance": "250000000000000000000000"
+}, {
+  "token_address": "0xf3a231bf11a0ef1a3074cf5a1f5620bc85d975fb",
+  "name": "Yearn Finance Global",
+  "symbol": "YFIG",
+  "logo": null,
+  "thumbnail": null,
+  "decimals": "18",
+  "balance": "5000000000000000000"
+}, {
+  "token_address": "0xa22134b7b18f1207414b69fcb3bdc6c6f18d7a78",
+  "name": "BadgerDAO.io",
+  "symbol": "BADGER",
+  "logo": null,
+  "thumbnail": null,
+  "decimals": "18",
+  "balance": "800000000000000000000000"
+}, {
+  "token_address": "0x2ceee24f8d03fc25648c68c8e6569aa0512f6ac3",
+  "name": "ABCHANGE.io",
+  "symbol": "XCH",
+  "logo": null,
+  "thumbnail": null,
+  "decimals": "9",
+  "balance": "298131000000000"
+}]
